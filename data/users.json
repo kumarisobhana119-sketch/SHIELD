@@ -1,0 +1,14 @@
+[
+  {
+    "id": "57d3704c-1523-46d1-a49b-13260d1a8bbf",
+    "name": "Test User",
+    "email": "test@shield.com",
+    "phone": "9999999999",
+    "password": "$2b$10$EJ2wanPcXk75zBy5v6Kl5el.vD9bqECS6AQ2cG2WrnFKNFxLQk8Xu",
+    "plan": "free",
+    "sosTrigger": "both",
+    "sensitivity": "medium",
+    "alarmEnabled": true,
+    "createdAt": "2026-04-21T18:30:44.879Z"
+  }
+]

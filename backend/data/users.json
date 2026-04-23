@@ -1,0 +1,14 @@
+[
+  {
+    "id": "38605ab1-da90-46f4-a3b2-4b038de06563",
+    "name": "Priya",
+    "email": "kumarisobhana119@gmail.com",
+    "phone": "06201110835",
+    "password": "$2b$10$RQ.WH3w572TILx8r.6KPP.FTCOh1pFnVdLPJqS3cUzR0/inM5XQ3C",
+    "plan": "free",
+    "sosTrigger": "both",
+    "sensitivity": "medium",
+    "alarmEnabled": true,
+    "createdAt": "2026-04-22T14:22:15.904Z"
+  }
+]

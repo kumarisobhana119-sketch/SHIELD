@@ -1,0 +1,28 @@
+{
+  "name": "shield",
+  "version": "1.0.0",
+  "description": "SHIELD — Women's Safety App. Because safety should not wait.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "safety",
+    "women",
+    "sos",
+    "emergency",
+    "shield"
+  ],
+  "author": "Sobhana Kumari, Sanskriti Tyagi, Vaidehi Gupta & Jay Tyagi",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "dotenv": "^16.6.1",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "uuid": "^11.1.0"
+  }
+}

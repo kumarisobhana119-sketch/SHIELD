@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHIELD — Women's Safety App | Instant SOS & Live Tracking</title>
+    <meta name="description"
+        content="SHIELD is a smart emergency safety app for women with instant SOS trigger, live GPS tracking, auto evidence recording, and offline alerts.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+</head>
+
+<body>
+
+    <!-- ── Preloader ── -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-shield">🛡️</div>
+            <div class="preloader-ring"></div>
+            <p class="preloader-text">SHIELD</p>
+        </div>
+    </div>
+
+    <!-- ── SOS Fullscreen Overlay ── -->
+    <div class="sos-overlay" id="sosOverlay">
+        <div class="sos-overlay-pulse"></div>
+        <div class="sos-overlay-content">
+            <div class="sos-overlay-icon">🚨</div>
+            <h2>SOS ACTIVATED</h2>
+            <p>Help is on the way</p>
+            <div class="sos-checklist">
+                <div class="sos-check-item"><span class="sos-check-icon">✅</span> Alerting trusted contacts</div>
+                <div class="sos-check-item"><span class="sos-check-icon">✅</span> Sharing live GPS location</div>
+                <div class="sos-check-item"><span class="sos-check-icon">✅</span> Recording audio & video</div>
+                <div class="sos-check-item"><span class="sos-check-icon">✅</span> Triggering 110dB alarm</div>
+                <div class="sos-check-item"><span class="sos-check-icon">✅</span> Sending offline SMS backup</div>
+            </div>
+            <button class="sos-dismiss-btn" id="sosDismissBtn">✓ I'm Safe — Dismiss Demo</button>
+        </div>
+    </div>
+
+    <!-- ── Toast Container ── -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- ── Navbar ── -->
+    <header class="navbar" id="navbar">
+        <div class="nav-logo">🛡️ SHIELD</div>
+        <nav>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+            </ul>
+        </nav>
+        <button class="btn-primary mobile-cta" onclick="startApp()">Get Started</button>
+        <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </header>
+
+    <!-- ── Mobile Menu Overlay ── -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-inner">
+            <a href="#features" class="mobile-link">Features</a>
+            <a href="#how-it-works" class="mobile-link">How It Works</a>
+            <a href="#testimonials" class="mobile-link">Testimonials</a>
+            <a href="#faq" class="mobile-link">FAQ</a>
+            <a href="#pricing" class="mobile-link">Pricing</a>
+            <a href="#team" class="mobile-link">Team</a>
+            <button class="btn-primary mobile-cta" onclick="startApp()">Get Started</button>
+        </div>
+    </div>
+
+    <!-- ── Hero ── -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-badge"><span class="dot"></span> Your safety, always on</div>
+            <h1>Your Personal <span class="highlight">Safety Shield</span>, Always On</h1>
+            <p class="hero-desc">Instant SOS alerts, live GPS tracking, auto evidence recording & offline SMS — all
+                working silently to keep you safe, even without unlocking your phone.</p>
+            <div class="hero-buttons">
+                <button class="btn-primary"
+                    onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})">🛡️ Download
+                    SHIELD</button>
+                <button class="btn-secondary"
+                    onclick="document.getElementById('how-it-works').scrollIntoView({behavior:'smooth'})">See How It
+                    Works</button>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <h3>50K+</h3>
+                    <p>Active Users</p>
+                </div>
+                <div class="stat">
+                    <h3>12K+</h3>
+                    <p>SOS Alerts Sent</p>
+                </div>
+                <div class="stat">
+                    <h3>99.9%</h3>
+                    <p>Uptime</p>
+                </div>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="assets/hero.png" alt="Confident woman protected by SHIELD safety app">
+        </div>
+    </section>
+
+    <!-- ── Emergency Ticker ── -->
+    <div class="emergency-ticker">
+        <div class="ticker-track">
+            <span>📞 Emergency: 112</span>
+            <span>👮 Women Helpline: 1091</span>
+            <span>🚔 Police: 100</span>
+            <span>🆘 Women Helpline: 181</span>
+            <span>👧 Child Helpline: 1098</span>
+            <span>🚑 Ambulance: 102</span>
+            <span>🚒 Fire: 101</span>
+            <span>🔒 Cyber Crime: 1930</span>
+            <span>👴 Senior Citizen: 14567</span>
+            <span>📞 Emergency: 112</span>
+            <span>👮 Women Helpline: 1091</span>
+            <span>🚔 Police: 100</span>
+            <span>🆘 Women Helpline: 181</span>
+            <span>👧 Child Helpline: 1098</span>
+            <span>🔒 Cyber Crime: 1930</span>
+        </div>
+    </div>
+
+    <!-- ── Features ── -->
+    <section id="features">
+        <div class="section-header">
+            <span class="section-tag">Features</span>
+            <h2>Everything You Need to Stay Safe</h2>
+            <p>Powerful safety tools designed to protect you in every situation, online or offline.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🆘</div>
+                <h3>Instant SOS Trigger</h3>
+                <p>Shake your phone or use a voice command to instantly activate SOS — no need to unlock or open the
+                    app.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📍</div>
+                <h3>Live Location Tracking</h3>
+                <p>Shares your real-time GPS coordinates with trusted contacts the moment SOS is triggered.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎥</div>
+                <h3>Auto Evidence Recording</h3>
+                <p>Automatically records audio and video in the background during emergencies without any user action.
+                </p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📶</div>
+                <h3>Offline Alert System</h3>
+                <p>Sends SOS alerts via SMS even without internet connectivity — help is always reachable.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">👥</div>
+                <h3>Trusted Contacts Network</h3>
+                <p>Pre-set emergency contacts who receive instant SOS alerts and live location updates.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔊</div>
+                <h3>Loud Alarm System</h3>
+                <p>Triggers a loud alarm to deter threats and attract attention from people nearby.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── How It Works ── -->
+    <section id="how-it-works">
+        <div class="section-header">
+            <span class="section-tag">How It Works</span>
+            <h2>3 Simple Steps to Safety</h2>
+            <p>Setting up SHIELD takes less than 2 minutes. Here's how.</p>
+        </div>
+        <div class="steps">
+            <div class="step">
+                <div class="step-num">1</div>
+                <h3>Set Up Contacts</h3>
+                <p>Add your trusted contacts who will receive instant SOS alerts and live location.</p>
+            </div>
+            <div class="step">
+                <div class="step-num">2</div>
+                <h3>Configure Triggers</h3>
+                <p>Choose your SOS activation method — shake, voice command, or quick tap.</p>
+            </div>
+            <div class="step">
+                <div class="step-num">3</div>
+                <h3>Stay Protected</h3>
+                <p>SHIELD runs silently in the background, ready to act instantly when you need it.</p>
+            </div>
+        </div>
+        <div class="sos-demo">
+            <button class="sos-btn-demo" id="sosDemoBtn">SOS</button>
+            <p class="sos-label">Try tapping the SOS button ↑</p>
+        </div>
+    </section>
+
+    <!-- ── Testimonials ── -->
+    <section id="testimonials">
+        <div class="section-header">
+            <span class="section-tag">Testimonials</span>
+            <h2>Trusted by Thousands of Women</h2>
+            <p>Real stories from real users who feel safer every day with SHIELD.</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <blockquote>"I never knew staying safe could be this simple. The shake-to-SOS feature saved me during a
+                    late night commute."</blockquote>
+                <div class="testimonial-author">
+                    <div class="author-avatar">P</div>
+                    <div class="author-info">
+                        <h4>Priya Sharma</h4>
+                        <p>Delhi, India</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <blockquote>"Even on my busiest days, I feel protected. The offline SMS feature works where there's no
+                    signal."</blockquote>
+                <div class="testimonial-author">
+                    <div class="author-avatar">N</div>
+                    <div class="author-info">
+                        <h4>Neha Gupta</h4>
+                        <p>Mumbai, India</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <blockquote>"Auto evidence recording gave me the proof I needed. SHIELD is a must-have for every woman."
+                </blockquote>
+                <div class="testimonial-author">
+                    <div class="author-avatar">S</div>
+                    <div class="author-info">
+                        <h4>Sara Khan</h4>
+                        <p>Bangalore, India</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── FAQ ── -->
+    <section id="faq">
+        <div class="section-header">
+            <span class="section-tag">FAQ</span>
+            <h2>Frequently Asked Questions</h2>
+            <p>Quick answers to help you get started with SHIELD.</p>
+        </div>
+        <div class="faq-list">
+            <div class="faq-item">
+                <button class="faq-question">How do I activate SOS in an emergency?<span class="faq-toggle">+</span></button>
+                <div class="faq-answer"><p>Shake your phone 3 times rapidly, say "SHIELD HELP", or tap the SOS button. It works from the lock screen — activates in under 2 seconds.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Does SHIELD work without internet?<span class="faq-toggle">+</span></button>
+                <div class="faq-answer"><p>Yes! SHIELD sends SOS alerts via SMS when there's no internet. It includes your last known GPS coordinates. Works on basic 2G — no data needed.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">How loud is the alarm?<span class="faq-toggle">+</span></button>
+                <div class="faq-answer"><p>SHIELD's alarm is 110 decibels — louder than a car horn. It activates even if your phone is on silent mode and only turns off when you enter your PIN.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">How many trusted contacts can I add?<span class="faq-toggle">+</span></button>
+                <div class="faq-answer"><p>Free plan supports 2 trusted contacts. Premium plan allows up to 5 contacts who receive instant SOS alerts, live location, and evidence recording links.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">What happens when SOS is triggered?<span class="faq-toggle">+</span></button>
+                <div class="faq-answer"><p>SHIELD instantly: alerts all contacts, shares live GPS (updates every 10 seconds), starts audio/video recording, triggers the alarm, and sends SMS backup — all automatically.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Is my location data safe and private?<span class="faq-toggle">+</span></button>
+                <div class="faq-answer"><p>Absolutely. Your location is shared only with trusted contacts during an SOS event. SHIELD uses end-to-end encryption and never shares your data with third parties.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Pricing ── -->
+    <section id="pricing">
+        <div class="section-header">
+            <span class="section-tag">Pricing</span>
+            <h2>Choose Your Safety Plan</h2>
+            <p>Core safety features are always free. Upgrade for advanced protection.</p>
+        </div>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h3>Free</h3>
+                <div class="price">₹0 <span>/forever</span></div>
+                <p class="price-desc">Essential safety at zero cost</p>
+                <ul class="pricing-features">
+                    <li><span class="check">✓</span> SOS Trigger (Shake + Voice + Button)</li>
+                    <li><span class="check">✓</span> 2 Trusted Contacts</li>
+                    <li><span class="check">✓</span> Offline SMS Alerts</li>
+                    <li><span class="check">✓</span> 110dB Loud Alarm</li>
+                    <li><span class="check">✓</span> Location Sharing (30s updates)</li>
+                    <li><span class="check">✓</span> Emergency Numbers Quick Access</li>
+                </ul>
+                <button class="pricing-btn">Get Started Free</button>
+            </div>
+            <div class="pricing-card featured">
+                <h3>Premium</h3>
+                <div class="price">₹99 <span>/month</span></div>
+                <p class="price-desc">Complete safety toolkit · ₹799/year</p>
+                <ul class="pricing-features">
+                    <li><span class="check">✓</span> Everything in Free</li>
+                    <li><span class="check">✓</span> 5 Trusted Contacts</li>
+                    <li><span class="check">✓</span> Live GPS (10s updates — 3× faster)</li>
+                    <li><span class="check">✓</span> Auto Evidence Recording</li>
+                    <li><span class="check">✓</span> Cloud Evidence Storage</li>
+                    <li><span class="check">✓</span> Auto Re-Alert System</li>
+                    <li><span class="check">✓</span> Route Safety Check</li>
+                    <li><span class="check">✓</span> Full AI Assistant 24/7</li>
+                </ul>
+                <button class="pricing-btn">Upgrade to Premium</button>
+            </div>
+            <div class="pricing-card">
+                <h3>Family</h3>
+                <div class="price">₹199 <span>/month</span></div>
+                <p class="price-desc">Protect your whole family · ₹1499/year</p>
+                <ul class="pricing-features">
+                    <li><span class="check">✓</span> Everything in Premium</li>
+                    <li><span class="check">✓</span> 5 Family Members</li>
+                    <li><span class="check">✓</span> 10 Contacts Per Member</li>
+                    <li><span class="check">✓</span> Family Safety Dashboard</li>
+                    <li><span class="check">✓</span> Child & Senior Safety Modes</li>
+                    <li><span class="check">✓</span> Group SOS Alert</li>
+                    <li><span class="check">✓</span> Priority 24/7 Support</li>
+                </ul>
+                <button class="pricing-btn">Get Family Plan</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Team ── -->
+    <section id="team">
+        <div class="section-header">
+            <span class="section-tag">Our Team</span>
+            <h2>Built with Purpose & Passion</h2>
+            <p>Meet the creators behind SHIELD — dedicated to making every woman safer.</p>
+        </div>
+        <div class="team-grid">
+            <div class="team-card">
+                <div class="team-avatar">S</div>
+                <h4>Sobhana Kumari</h4>
+                <p>Founder & Frontend Developer</p>
+            </div>
+            <div class="team-card">
+                <div class="team-avatar">S</div>
+                <h4>Sanskriti Tyagi</h4>
+                <p>Product Manger</p>
+            </div>
+            <div class="team-card">
+                <div class="team-avatar">V</div>
+                <h4>Vaidehi Gupta</h4>
+                <p>Co-Founder & Operation Manager</p>
+            </div>
+            <div class="team-card">
+                <div class="team-avatar">J</div>
+                <h4>Jay Tyagi</h4>
+                <p>Marketing & Business Development Head</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── CTA ── -->
+    <section class="cta-section">
+        <h2>Your Safety Shouldn't Wait</h2>
+        <p>Download SHIELD today and take control of your safety — for free.</p>
+        <button class="btn-primary" style="font-size:1rem;padding:16px 40px;">🛡️ Download SHIELD Now</button>
+    </section>
+
+    <!-- ── Footer ── -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>🛡️ SHIELD</h3>
+                <p>Because safety should not wait. Smart emergency safety app empowering women with instant SOS, live tracking, and auto evidence recording.</p>
+                <p style="margin-top:8px;font-size:0.8rem;">📧 kumarisobhana119@gmail.com</p>
+            </div>
+            <div class="footer-col">
+                <h4>Product</h4>
+                <a href="#features">Features</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#">Download</a>
+            </div>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <a href="#">Help Center</a>
+                <a href="#">Contact Us</a>
+                <a href="#">Safety Tips</a>
+                <a href="#">FAQs</a>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 SHIELD Safety Technologies. All rights reserved. Emergency: Call 112</p>
+        </div>
+    </footer>
+
+    <!-- ── Chatbot FAB ── -->
+    <button class="chat-fab" id="chatFab" aria-label="Open AI Assistant">💬</button>
+
+    <!-- ── Chatbot Window ── -->
+    <div class="chatbot" id="chatbot">
+        <div class="chat-header">
+            <div class="chat-header-avatar">🛡️</div>
+            <div class="chat-header-info">
+                <h4>SHIELD Assistant</h4>
+                <p>● Online — here to help</p>
+            </div>
+            <button class="chat-close-btn" id="chatCloseBtn">✕</button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <!-- Messages injected by JS -->
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="chatInput" placeholder="Ask me about SHIELD..." autocomplete="off">
+            <button class="chat-send" id="chatSend" aria-label="Send">➤</button>
+        </div>
+    </div>
+
+    <!-- ── Scroll to Top ── -->
+    <button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top">↑</button>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
