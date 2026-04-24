@@ -1,0 +1,49 @@
+# Dependencies
+node_modules/
+backend/node_modules/
+frontend/node_modules/
+
+# Environment variables
+.env
+backend/.env
+*.env.local
+*.env.production
+
+# Database files (JSON storage)
+backend/data/*.json
+data/*.json
+
+# Logs
+*.log
+npm-debug.log*
+logs/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build outputs
+dist/
+build/
+.cache/
+
+# Temporary files
+.kiro_tmp/
+tmp/
+temp/
+
+# Vercel
+.vercel
+
+# Railway
+.railway
+
+# Render
+.render

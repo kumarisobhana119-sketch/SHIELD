@@ -2,10 +2,12 @@
   "name": "shield",
   "version": "1.0.0",
   "description": "SHIELD — Women's Safety App. Because safety should not wait.",
-  "main": "server.js",
+  "main": "backend/server.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "node server.js"
+    "start": "cd backend && npm install && node server.js",
+    "dev": "cd backend && node server.js",
+    "install-backend": "cd backend && npm install",
+    "deploy": "npm run install-backend && npm start"
   },
   "keywords": [
     "safety",
