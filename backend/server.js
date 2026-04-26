@@ -7,6 +7,7 @@
 // Contact:  kumarisobhana119@gmail.com
 // ═══════════════════════════════════════════
 
+console.log("Starting server...");
 require('dotenv').config();
 
 const express = require('express');
