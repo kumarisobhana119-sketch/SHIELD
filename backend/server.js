@@ -21,7 +21,7 @@ const PORT = process.env.PORT || 3000;
 const allowedOrigins = [
   'http://localhost:3000',
   'http://127.0.0.1:3000',
-  'https://shield-safety-app.onrender.com',
+  'https://shield-anwc.onrender.com',
   // Add your custom domain here if you have one
 ];
 
