@@ -9,8 +9,8 @@ backend/.env
 *.env.local
 *.env.production
 
-# Database files (JSON storage)
-backend/data/*.json
+# Database files (JSON storage) — keep seed files, ignore runtime data
+# backend/data/*.json  <-- intentionally tracked for deployment seed
 data/*.json
 
 # Logs
